@@ -1,17 +1,17 @@
-import pydantic
+from pydantic import BaseModel
 
-class RAGChunkAndSrc(pydantic.BaseModel):
+class RAGChunkAndSrc(BaseModel):
     chunks: list[str]
-    source_id:str=None
+    source_id: str
 
-class RAGUpsertResult(pydantic.BaseModel):
-    ingested:int
+class RAGUpsertResult(BaseModel):
+    ingested: int
 
-class RAGSearchResult(pydantic.BaseModel):
-    contexts:list[str]
-    sources:list[str]
+class RAGSearchResult(BaseModel):
+    contexts: list[str]
+    sources: list[str]
 
-class RAGQueryResult(pydantic.BaseModel):
-    answer:str
-    sources:list[str]
-    num_contexts:int
+class RAGQueryResult(BaseModel):
+    answer: str
+    sources: list[str]
+    num_contexts: int
